@@ -1,0 +1,139 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: radial-gradient(circle at 20% 30%, #8a2be2, transparent),
+                radial-gradient(circle at 80% 70%, #4b0082, transparent),
+                black;
+    overflow: hidden;
+}
+
+/* ESTRELAS */
+body::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: url("https://www.transparenttextures.com/patterns/stardust.png");
+    animation: estrelas 60s linear infinite;
+    opacity: 0.4;
+}
+
+@keyframes estrelas {
+    from {transform: translate(0,0);}
+    to {transform: translate(-500px, -500px);}
+}
+
+/* CARD CINEMATOGRÁFICO */
+.card {
+    width: 90%;
+    max-width: 400px;
+    padding: 25px;
+
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 25px;
+
+    text-align: center;
+    color: white;
+
+    box-shadow: 0 0 40px rgba(138,43,226,0.6);
+
+    animation: cinemaEntrada 1.5s ease;
+}
+
+/* ENTRADA CINEMA */
+@keyframes cinemaEntrada {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* TÍTULO */
+.titulo-animado {
+    font-size: 2em;
+    animation: brilho 2s infinite alternate;
+}
+
+@keyframes brilho {
+    from {text-shadow: 0 0 5px white;}
+    to {text-shadow: 0 0 25px #8a2be2;}
+}
+
+/* BOTÃO */
+button {
+    width: 100%;
+    padding: 15px;
+    border-radius: 12px;
+    border: none;
+    margin-top: 15px;
+
+    background: #8a2be2;
+    color: white;
+}
+
+/* SLIDES */
+.slide {
+    width: 100%;
+    border-radius: 20px;
+    display: none;
+    margin-top: 15px;
+}
+
+.ativo {
+    display: block;
+}
+
+/* TELA FINAL CINEMA */
+.tela-final {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: black;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 1.8em;
+    text-align: center;
+    padding: 20px;
+
+    animation: fadeCinema 2s ease;
+}
+
+@keyframes fadeCinema {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* CORAÇÕES */
+.coracao {
+    position: fixed;
+    font-size: 20px;
+    animation: subir 3s linear forwards;
+}
+
+@keyframes subir {
+    from {transform: translateY(0);}
+    to {transform: translateY(-600px); opacity:0;}
+}
+
+.hidden {
+    display: none;
+}

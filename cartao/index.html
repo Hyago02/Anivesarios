@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nycole 💖</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- TELA FINAL -->
+<div id="telaFinal" class="tela-final hidden">
+    <p id="textoFinal"></p>
+</div>
+
+<div class="card" id="cardPrincipal">
+    <h1 class="titulo-animado">Nycole 💖</h1>
+
+    <p class="mensagem">
+        🎂 Hoje é o seu aniversário… um dia único ✨
+    </p>
+
+    <!-- SURPRESA JÁ VISÍVEL -->
+    <div id="surpresa">
+        
+        <div class="slideshow">
+            <img src="img/foto1.jpeg" class="slide ativo">
+            <img src="img/foto2.jpeg" class="slide">
+            <img src="img/foto3.jpeg" class="slide">
+        </div>
+
+        <button onclick="mensagemSecreta()">Clique aqui 👀</button>
+
+        <p id="msgSecreta" class="hidden">
+            Nycole, eu fiz tudo isso só pra te ver sorrir 💜
+        </p>
+    </div>
+</div>
+
+<audio id="musica">
+    <source src="musica.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
+
+</body>
+</html>

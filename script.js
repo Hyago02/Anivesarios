@@ -7,31 +7,30 @@ document.addEventListener("DOMContentLoaded", function () {
     let slides = document.querySelectorAll(".slide");
     let index = 0;
 
-    setInterval(() => {
+    if (slides.length > 0) {
 
-        if (slides.length > 0) {
+        setInterval(() => {
 
             slides[index].classList.remove("ativo");
 
             index = (index + 1) % slides.length;
 
             slides[index].classList.add("ativo");
-        }
 
-    }, 2000);
+        }, 2500);
+    }
 
     // BOTÃO SURPRESA
     window.mensagemSecreta = function () {
 
         // TOCA A MÚSICA
         if (musica) {
-            musica.volume = 0.5;
+            musica.volume = 0.7;
             musica.play().catch(() => {});
         }
 
-        // MOSTRA A MENSAGEM
-        document
-            .getElementById("msgSecreta")
+        // MOSTRA A MENSAGEM SECRETA
+        document.getElementById("msgSecreta")
             .classList.remove("hidden");
 
         criarCoracoes();
@@ -42,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // CORAÇÕES
     function criarCoracoes() {
 
-        for (let i = 0; i < 40; i++) {
+        for (let i = 0; i < 50; i++) {
 
             let c = document.createElement("div");
 
@@ -55,6 +54,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             c.style.top =
                 window.innerHeight + "px";
+
+            c.style.fontSize =
+                (Math.random() * 20 + 15) + "px";
 
             document.body.appendChild(c);
 
@@ -76,10 +78,9 @@ document.addEventListener("DOMContentLoaded", function () {
         const textoFinal =
             document.getElementById("textoFinal");
 
-        // LIMPA TEXTO ANTIGO
         textoFinal.innerHTML = "";
 
-        // EFEITO CINEMA
+        card.style.transition = "1s";
         card.style.opacity = "0";
         card.style.transform = "scale(0.8)";
 
@@ -89,24 +90,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
             telaFinal.classList.remove("hidden");
 
-        }, 800);
+        }, 1000);
 
-        // TEXTO FINAL
-        let texto =
-`💜 Feliz Aniversário Nycole 💜
+        let texto = `💜 Feliz Aniversário Nycole 💜
 
 Hoje é um dia muito especial 🎂✨
 
 Que seu novo ciclo seja cheio de amor,
-felicidade, saúde e sonhos realizados.
+felicidade, saúde e muitas conquistas.
 
 Você é uma pessoa incrível e merece
-tudo de melhor nesse mundo.
+tudo de melhor que a vida pode oferecer.
 
-Nunca deixe de sorrir e acreditar
-nos seus sonhos.
+Que nunca faltem motivos para sorrir,
+sonhar e ser feliz.
 
-Aproveite muito o seu dia! 💖`;
+Aproveite muito o seu dia!
+
+💖✨🎂`;
 
         let i = 0;
 
